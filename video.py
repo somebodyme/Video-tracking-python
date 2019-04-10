@@ -92,7 +92,7 @@ vsota_kotov_pred=0
 kot_n = np.arctan((zelena[0,1]-rdeca[0,1])/(zelena[0,0]-rdeca[0,0]))
 while y <= frame_odboja :
     kot_n1 = np.arctan((zelena[y,1]-rdeca[y,1])/(zelena[y,0]-rdeca[y,0]))
-    vsota_kotov_pred += np.abs(np.abs(kot_n1)-np.abs(kot_n))
+    vsota_kotov_pred += np.abs(kot_n1-kot_n)
     kot_n = kot_n1
     y +=1
 
@@ -100,7 +100,7 @@ vsota_kotov_po = 0
 
 while y < video_length :
     kot_n1 = np.arctan((zelena[y, 1] - rdeca[y, 1]) / (zelena[y, 0] - rdeca[y, 0]))
-    vsota_kotov_po += np.abs(np.abs(kot_n1) - np.abs(kot_n))
+    vsota_kotov_po += np.abs(kot_n1 - kot_n)
     kot_n = kot_n1
     y += 1
 
